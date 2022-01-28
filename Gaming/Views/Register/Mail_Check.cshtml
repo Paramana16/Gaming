@@ -1,0 +1,44 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="~/css/Home/Register.css" />
+	<title>NISANCI.NET|Register</title>
+</head>
+
+<body>
+	<!--logo-->
+
+	<div id="logo-img">
+		<img src="/images/logo.jpg" alt="logo" width="210px">
+		<h2>NISANCI.NET</h2>
+	</div>
+	<!--country vote-->
+
+	<div id="formRegister">
+		@model Gaming.Model.Mail
+		<form asp-action="Mail_Check" asp-controller="Register" method="post">
+			<div id="birthdayPerson">
+				<div>
+					<label style="color:aliceblue">Enter the security code sent to your email address:</label> <br />
+					<input type="number" name="code" placeholder="Security Code:"> <br />
+					<span style="color:red">@ViewBag.checkRightOfEnter</span><br />
+				</div>
+			</div>
+			<button id="continueButton" type="submit" value="Gönder" style="width:150px; height:40px; font-size:14px;background-color:darkslateblue;">Resend Security Code</button>
+			<br />
+			<br />
+			
+			<button id="continueButton" type="submit" value="Gönder">Next</button>
+			
+		</form>
+
+
+	</div>
+</body>
+</html>

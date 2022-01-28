@@ -1,0 +1,45 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="~/css/Home/Register.css" />
+	<title>NISANCI.NET|Register</title>
+</head>
+
+<body>
+	<!--logo-->
+
+	<div id="logo-img">
+		<img src="/images/logo.jpg" alt="logo" width="210px">
+		<h2>NISANCI.NET</h2>
+	</div>
+	<!--country vote-->
+
+	<div id="formRegister">
+		
+		@model Gaming.Model.Check_Mail
+		<form asp-action="Register1" asp-controller="Register" method="post">
+
+			<div id="birthdayPerson">
+				<input type="text" asp-for="check_EMAIL" placeholder="Email"><br />
+				<span style="color:red;" asp-validation-for="check_EMAIL"></span> <br />
+				
+				<input type="password" asp-for="check_PASSWORD" placeholder="Password"><br />
+				<span style="color:red;" asp-validation-for="check_PASSWORD"></span>
+				<br />
+
+				<input type="password" asp-for="check_PASSWORD2" placeholder="Password2"><br />
+				<span style="color:red;" asp-validation-for="check_PASSWORD2"></span><br />				
+				<span style="color:red;">@ViewBag.checkPassword</span> <br />
+			</div>
+
+			<button id="continueButton" type="submit" value="Gönder">Continue</button>
+		</form>
+	</div>
+</body>
+</html>

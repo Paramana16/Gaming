@@ -1,0 +1,67 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="~/css/Home/Register.css" />
+	<title>NISANCI.NET|Register</title>
+</head>
+
+<body>
+	<!--logo-->
+
+	<div id="logo-img">
+
+		<img src="/images/logo.jpg" alt="logo" width="210px">
+		<h2>NISANCI.NET</h2>
+		<h1>Get Started</h1>
+		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi dicta magnam aliquid!</p>
+
+	</div>
+	<!--country vote-->
+
+	<div id="formRegister">
+
+		@model Gaming.Model.check_Informaiton
+		<form asp-action="Register2" asp-controller="Register" method="post">
+
+			<div id="birthdayPerson">
+				<div>
+					<input asp-for="check_USER_NAME" type="text" placeholder="User Name:"><br />
+					<span style="color:red;" asp-validation-for="check_USER_NAME"></span>
+				</div>
+				<div>
+					<input asp-for="check_NAME" type="text" placeholder="Name:"><br />
+					<span style="color:red;" asp-validation-for="check_NAME"></span>
+				</div>
+				<div>
+					<input type="text" asp-for="check_SURNAME" placeholder="Surame:"><br />
+					<span style="color:red;" asp-validation-for="check_SURNAME"></span>
+				</div>
+				<div>
+					<input type="date" asp-for="check_BIRTH_DATE" placeholder="Birth Date: "><br />
+					<span style="color:red;" asp-validation-for="check_BIRTH_DATE"></span>
+				</div>
+				<div>
+					<input type="text" asp-for="check_TELEPHONE_NUMBER" placeholder="Telephone Number: "><br />
+					<span style="color:red;" asp-validation-for="check_TELEPHONE_NUMBER"></span>
+				</div>
+				<br />
+				<div>
+					<select  asp-for="check_GENDER" id="country">
+						<option value="" selected disabled hidden>Gender: </option>
+						<option>Male</option>
+						<option>Female</option>
+						<option>LGBTI+</option>
+					</select>
+				</div>
+			</div>
+			<button id="continueButton">Continue</button>
+		</form>
+	</div>
+</body>
+</html>
